@@ -1,0 +1,43 @@
+<br>
+<div [hidden]="submitted" style="width: 400px;" class="container">
+    <form (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="id">Goods Id</label>
+        <input type="text" class="form-control" id="id" required [(ngModel)]="goods.goodsId" name="id">
+      </div>
+  
+      <div class="form-group">
+        <label for="gdes">Goods Description</label>
+        <input type="text" class="form-control" id="gdes" required [(ngModel)]="goods.description" name="gdes">
+      </div>
+
+      <div class="form-group">
+        <label for="qua">Goods Quantity</label>
+        <input type="text" class="form-control" id="qua" required [(ngModel)]="goods.quantity" name="qua">
+      </div>
+  
+      <div class="form-group">
+        <label for="pick">Pickup Location</label>
+        <input type="text" class="form-control" id="pick" required [(ngModel)]="goods.pickupLocation" name="pick">
+      </div>
+
+      <div class="form-group">
+        <label for="deliv">Delivery Location</label>
+        <input type="text" class="form-control" id="deliv" required [(ngModel)]="goods.deliveryLocation" name="deliv">
+      </div>
+
+      <div class="form-group">
+        <label for="sts">Delivery Status</label>
+        <input type="text" class="form-control" id="sts" required [(ngModel)]="goods.status" name="sts">
+      </div>
+  <br>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+  
+  <div [hidden]="!submitted">
+    <h4>You submitted successfully!</h4>
+    <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+  </div>
+  <br>

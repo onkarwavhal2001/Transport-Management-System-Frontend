@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', 'Arial', sans-serif;
+  }
+  
+
+
+/* Navbar */
+
+a {
+    text-decoration: none;
+  }
+  
+  .navbar {
+    display: flex;
+    /* let's align the items so everything is nice and centered */
+    align-items: center;
+  }
+  
+  /* We want all links in the navbar to be #e7e7e7 */
+  .navbar a {
+    color: #e7e7e7;
+  }
+  
+  .navbar ul {
+   /* Let's reset the margin and padding of the list so it's is flush. */
+    margin: 0;
+    padding: 0;
+    /* Let's remove the bullet points */
+    list-style-type: none;
+    /* display the list flex and align the items centered */
+    display: flex;
+    align-items:center;
+  }
+  
+  .navbar .brand {
+    /*Let's make the anchor display block.
+       This will ensure when we get the full width of the container.
+    */
+    display: block;
+    color: #e7e7e7;
+   /* Remove padding from top/bottom and add 24px padding right/left */
+    padding: 0 24px;
+    font-size: 24px;
+  }
+  
+  .navbar ul li a {
+    color: #e7e7e7;
+    padding: 24px;
+    /*Let's make the anchor display block.
+       This will ensure when we hover, focus, or is active we get the full width and height 
+        of the container.
+    */
+    display: block;
+  }
+  
+  /* When a user hovers, focuses or if the link is active change the background */
+  .navbar ul a:hover,
+  .navbar ul a:focus,
+  .navbar ul .active 
+  {
+    background-color: #272727;
+  }
+
+
+
+  /*contact*/
+  
+.content-width 
+{
+ text-align: center;
+ font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+ color: white;
+ background-color:green;
+
+}
+.map-section iframe
+{
+  justify-content: center;
+  margin-left: 100px;
+  width: 100%;
+  height: 600px;
+}
+.about p {
+ font-size: 20px;
+ color: black;
+}
+.contact .info-wrap {
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+  }
+  
+  .contact .info {
+    background: #fff;
+  }
+  
+  .contact .info i {
+    font-size: 20px;
+    color: #1bbd36;
+    float: left;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #1bbd36;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s;
+  }
+  
+  .contact .info h4 {
+    padding: 0 0 0 60px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #111;
+  }
+  
+  .contact .info p {
+    padding: 0 0 0 60px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #444444;
+  }
+  
+  .contact .info:hover i {
+    background: #1bbd36;
+    color: #fff;
+  }
+  
+  .contact .form {
+    width: 100%;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+    padding: 30px;
+    background: #fff;
+  }
+  
+  .contact .form .form-group {
+    padding-bottom: 8px;
+  }
+  
+  .contact .form .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+  }
+  
+  .contact .form .error-message br+br {
+    margin-top: 25px;
+  }
+  
+  .contact .form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+  }
+  
+  .contact .form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .contact .form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    animation: animate-loading 1s linear infinite;
+  }
+  
+  .contact .form input,
+  .contact .form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  
+  .contact .form input:focus,
+  .contact .form textarea:focus {
+    border-color: #1bbd36;
+  }
+  
+  .contact .form input {
+    height: 44px;
+  }
+  
+  .contact .form textarea {
+    padding: 10px 12px;
+  }
+  
+  .contact .form button[type=submit] {
+    background: #1bbd36;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 4px;
+  }
+  
+  .contact .form button[type=submit]:hover {
+    background: #2ae149;
+  }
+  
+  @keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+ 

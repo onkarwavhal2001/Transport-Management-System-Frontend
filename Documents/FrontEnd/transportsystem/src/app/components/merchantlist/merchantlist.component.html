@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Merchant List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Merchant-Id</th>
+            <th>Merchant-Name</th>
+            <th>Merchant-Password</th>
+            <th>Merchant-MobileNo</th>
+            <th>Merchant-EmailId</th>
+            <th>Merchant-Address</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let m of merchants |  async" >
+            <td>{{m.merchantId}}</td>
+            <td>{{m.merchantName}}</td>
+            <td>{{m.merchantPassword}}</td>
+            <td>{{m.mMobNo}}</td>
+            <td>{{m.emailId}}</td>
+            <td>{{m.merchantAddress}}</td>
+            <td>
+              <button (click)="merchantDetails(m.merchantId)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>

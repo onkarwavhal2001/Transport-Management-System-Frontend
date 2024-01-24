@@ -1,0 +1,138 @@
+<!-- <br>
+<div [hidden]="submitted" style="width: 400px;" class="container">
+    <form (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="id">Farmer Id</label>
+        <input type="text" class="form-control" id="id" required [(ngModel)]="farmer.farmerId" name="id">
+      </div>
+  
+      <div class="form-group">
+        <label for="name">Farmer Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="farmer.farmerName" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="pass">Farmer Password</label>
+        <input type="password" class="form-control" id="pass" required [(ngModel)]="farmer.farmerPassword" name="pass">
+      </div>
+  
+      <div class="form-group">
+        <label for="mobno">Farmer Mobile No</label>
+        <input type="text" class="form-control" id="mobno" required [(ngModel)]="farmer.fMobNo" name="mobno">
+      </div>
+
+      <div class="form-group">
+        <label for="emailid">Farmer Email</label>
+        <input type="email" class="form-control" id="emailid" required [(ngModel)]="farmer.femailId" name="emailid">
+      </div>
+
+      <div class="form-group">
+        <label for="add">Farmer Address</label>
+        <input type="textarea" class="form-control" id="add" required [(ngModel)]="farmer.farmerAddress" name="add">
+      </div>
+  <br>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+  
+  <div [hidden]="!submitted">
+    <h4>You submitted successfully!</h4>
+    <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> 
+  </div>
+  <br> -->
+
+
+  <!-- signup.component.html -->
+  <div class="container" >
+    <form #signUpform="ngForm" (ngSubmit)="submitForm()"  class="login">
+      <small [class.text-danger]="msg.status==500">{{msg.message}}</small>
+  
+      <h2 style="text-align: center;"><b>REGISTRATION FORM</b></h2>
+      <marquee>create your account it's free only take a minute</marquee>
+  
+      <div class="form-group">
+        <label for="farmerId"><b>Farmer-Id</b></label>
+        <input type="text" class="form-control" id="farmerId" name="farmerId" [(ngModel)]="farmer.farmerId"
+          #farmerId="ngModel" [class.is-invalid]="farmerId.invalid && farmerId.touched" required placeholder="Enter Your User Name">
+        <small class="text-danger" [class.d-none]="farmerId.valid || farmerId.untouched" >Farmer Id is required
+          field</small>
+      </div>
+  
+      <div class="form-group">
+        <label for="farmerName"><b>Farmer-Name</b></label>
+        <input type="text" class="form-control" id="farmerName" name="farmerName" [(ngModel)]="farmer.farmerName"
+          #farmerName="ngModel" [class.is-invalid]="farmerName.invalid && farmerName.touched" required placeholder="Enter Farmer Name">
+        <small class="text-danger" [class.d-none]="farmerName.valid || farmerName.untouched" >Farmer name is required
+          field</small>
+      </div>
+  
+      
+      <div class="form-group">
+        <label for="femailId"><b>Email</b></label>
+        <input type="email" class="form-control" id="femailId" name="femailId" placeholder="Enter Your Email"
+          [(ngModel)]="farmer.femailId" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" #femailId="ngModel"
+          [class.is-invalid]="femailId.invalid && femailId.touched" />
+        <!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email id is required field</small>   -->
+        <div *ngIf="femailId.errors && (femailId.invalid && femailId.touched)">
+          <small class="text-danger" *ngIf="femailId.errors['required']">Email id is required field</small>
+          <small class="text-danger" *ngIf="femailId.errors['pattern']">Enter valid Email id</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="fMobNo"><b>Farmer-MobNo</b></label>
+        <input type="text" class="form-control" id="fMobNo" name="fMobNo" [(ngModel)]="farmer.fMobNo"
+          #fMobNo="ngModel" [class.is-invalid]="fMobNo.invalid && fMobNo.touched" required placeholder="Enter Your User Name">
+        <small class="text-danger" [class.d-none]="fMobNo.valid || fMobNo.untouched" >Farmer MobNo is required
+          field</small>
+      </div>
+
+      <div class="form-group">
+        <label for="farmerAddress"><b>Farmer Address</b></label>
+        <input type="text" class="form-control" id="farmerAddress" name="farmerAddress" placeholder="Enter Your Password"
+          [(ngModel)]="farmer.farmerAddress" required #farmerAddress="ngModel"
+          [class.is-invalid]="farmerAddress.invalid && farmerAddress.touched" />
+        <small class="text-danger" [class.d-none]="farmerAddress.valid || farmerAddress.untouched">Address is required
+          field</small>
+      
+      </div>
+
+      <div class="form-group">
+        <label for="farmerPassword"><b>Farmer Password</b></label>
+        <input type="password" class="form-control" id="farmerPassword" name="farmerPassword" placeholder="Enter Your Password"
+          [(ngModel)]="farmer.farmerPassword" required #farmerPassword="ngModel"
+          [class.is-invalid]="farmerPassword.invalid && farmerPassword.touched" />
+        <small class="text-danger" [class.d-none]="farmerPassword.valid || farmerPassword.untouched">Password is required
+          field</small>
+      
+      </div>
+  
+      <div class="form-group">
+        <label for="cpassword"><b>Confirm Password</b></label>
+        <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Enter Confirm Password"
+          (ngModel)="farmer.farmerPassword" required #cpassword='ngModel'
+          [class.is-invalid]="cpassword.invalid && cpassword.touched" />
+        <small class="text-danger" [class.d-none]="(cpassword.value==farmerPassword.value) || cpassword.untouched">
+          Password and confirm password must be same</small>
+      </div>
+  
+     
+  
+  <br>
+     
+  
+      <button [disabled]="signUpform.form.invalid" type="submit" class="btn btn-info" style="margin-left: 40%; ">SIGN UP</button>
+      <br>
+     
+          <div style="color: white;  font-size: 20px; margin-left: 25%; ">
+            <br>
+                 Existing User? <a [routerLink]="['/flogin']">LogIn Here</a>
+          </div>
+  
+    </form>
+   
+  
+  
+  </div>
+  <br><br>

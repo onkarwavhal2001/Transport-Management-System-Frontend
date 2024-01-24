@@ -1,0 +1,27 @@
+<h2>Merchant details</h2>
+<hr>
+<div *ngIf="merchant">
+  <div>
+    <label><b>Merchant Id: </b></label> {{merchant.merchantId}}
+  </div>
+  <div>
+    <label><b>Merchant Name: </b></label> {{merchant.merchantName}}
+  </div>
+  <div>
+    <label><b>Merchant Password: </b></label> {{merchant.merchantPassword}}
+  </div>
+  <div>
+    <label><b>Merchant MobNo: </b></label> {{merchant.mMobNo}}
+  </div>
+  <div>
+    <label><b>Merchant EmailId: </b></label> {{merchant.emailId}}
+  </div>
+  <div>
+    <label><b>Merchant Address: </b></label> {{merchant.merchantAddress}}
+  </div>
+  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Merchant List</button><br>

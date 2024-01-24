@@ -1,0 +1,51 @@
+<div >
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="id">Seeds Id</label>
+        <input type="text" class="form-control" id="goodsId" 
+        required [(ngModel)]="seeds.seedssId" name="goodsId">
+      </div>
+  
+      <div class="form-group">
+        <label for="desc">Seeds Description</label>
+        <input type="text" class="form-control" id="desc" 
+        
+        required [(ngModel)]="seeds.sdescription" name="desc">
+      </div>
+  
+      
+      <div class="form-group">
+          <label for="quan">Seeds Quantity</label>
+          <input type="text" class="form-control" id="quan" 
+          
+          required [(ngModel)]="seeds.squantity" name="quan">
+        </div>
+  
+        
+      <div class="form-group">
+          <label for="pick">Seeds Pickup Location</label>
+          <input type="text" class="form-control" id="pick" 
+          
+          required [(ngModel)]="seeds.spickupLocation" name="pick">
+        </div>
+  
+        
+      <div class="form-group">
+          <label for="delv">Seeds Delivery Location</label>
+          <input type="text" class="form-control" id="delv" 
+          
+          required [(ngModel)]="seeds.sdeliveryLocation" name="delv">
+        </div>
+  
+        
+      <div class="form-group">
+          <label for="sts">Seeds Pickup Status</label>
+          <input type="text" class="form-control" id="sts" 
+          
+          required [(ngModel)]="seeds.sstatus" name="sts">
+        </div>
+     
+  
+      <button type="submit" class="btn btn-success">Edit</button>
+    </form>
+  </div>

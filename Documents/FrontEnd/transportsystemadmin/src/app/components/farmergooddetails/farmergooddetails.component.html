@@ -1,0 +1,39 @@
+<br><br>
+<div class="main">
+<div class="input-group container">
+    <input #farmId type="text" class="form-control rounded" placeholder="Enter id" required name="id" aria-label="Search" aria-describedby="search-addon" />
+    <button type="button" (click)="farmerDetails(farmId.value)" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
+    <button (click)="addGood" class="btn btn-info" style="margin-left: 10px">Add Good</button>
+    <button (click)="addFarmer()" class="btn btn-info" style="margin-left: 10px">Add Farmer</button>
+
+</div>
+</div>
+<div *ngIf="visit">
+    <div>
+        <label><b>Farmer Id: </b></label> {{farmer.farmerId}}
+      </div>
+      <div>
+        <label><b>Farmer Name: </b></label> {{farmer.farmerName}}
+      </div>
+      <div>
+        <label><b>Farmer Password: </b></label> {{farmer.farmerPassword}}
+      </div>
+      <div>
+        <label><b>Farmer MobNo: </b></label> {{farmer.fMobNo}}
+      </div>
+      <div>
+        <label><b>Farmer EmailId: </b></label> {{farmer.femailId}}
+      </div>
+      <div>
+        <label><b>Farmer Address: </b></label> {{farmer.farmerAddress}}
+      </div>
+    
+    <div *ngFor="let g of farmer.goods">
+        <p>{{g.goodsId}}</p>
+    <p>{{g.description}}</p>
+    <p>{{g.quantity}}</p>
+    <p>{{g.pickupLocation}}</p>
+    <p>{{g.deliveryLocation}}</p>
+    <p>{{g.status}}</p>
+    </div>
+</div>

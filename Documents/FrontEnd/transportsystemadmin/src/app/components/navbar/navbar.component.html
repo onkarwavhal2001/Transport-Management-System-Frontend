@@ -1,0 +1,67 @@
+<div>
+    <nav class="navbar" style="background-color: green;">
+      <a class="brand" routerLink="/home">Admin Panel</a>
+      <ul>
+        <li>
+          <a class="active" routerLink="/home">Home</a>
+        </li>
+  
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+              Farmer Data
+            </a>
+            <div class="dropdown-menu" style="background-color: green;" >
+              <a class="dropdown-item" routerLink="/addfarmer">Add Farmer</a>
+              <a class="dropdown-item" routerLink="/addgood">Add Goods</a>
+              <a class="dropdown-item" routerLink="/farmerlist">Farmer List</a>
+              <a class="dropdown-item" routerLink="/goodlist">Good's List</a>
+
+              <div class="dropdown-divider"></div>
+              
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+              Merchant Data
+            </a>
+            <div class="dropdown-menu" style="background-color: green;" >
+              <a class="dropdown-item" routerLink="/addmerchant">Add Merchant</a>
+              <a class="dropdown-item" routerLink="/addseed">Add Seeds</a>
+              <a class="dropdown-item" routerLink="/merchantlist">Merchant List</a>
+              <a class="dropdown-item" routerLink="/slist">Seeds List</a>
+              <div class="dropdown-divider"></div>
+              
+            </div>
+          </li>
+  
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+            Available List
+          </a>
+          <div class="dropdown-menu" style="background-color: green;" >
+            <a class="dropdown-item" routerLink="/farmerlist">Farmer's List</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/mlist">Merchant's List</a>
+            <a class="dropdown-item" routerLink="/glist">Good's List</a>
+            <a class="dropdown-item" routerLink="/slist">Seed's List</a>
+            <a class="dropdown-item" routerLink="/vlist">Vehicle's List</a>
+  
+          </div>
+        </li>
+
+        <li>
+          <a  routerLink="/search">Search Farmer</a>
+        </li>
+
+        <li>
+          <a  routerLink="/searchm">Search Merchant</a>
+        </li>
+  
+      </ul>
+    </nav>
+  </div>
+  
+  
+  
+  

@@ -1,0 +1,27 @@
+<h2>Goods details</h2>
+<hr>
+<div *ngIf="goods">
+  <div>
+    <label><b>Goods Id: </b></label> {{goods.goodsId}}
+  </div>
+  <div>
+    <label><b>Goods Description: </b></label> {{goods.description}}
+  </div>
+  <div>
+    <label><b>Goods Quantity: </b></label> {{goods.quantity}}
+  </div>
+  <div>
+    <label><b>Goods PickupLocation: </b></label> {{goods.pickupLocation}}
+  </div>
+  <div>
+    <label><b>Goods DeliveryLocation: </b></label> {{goods.deliveryLocation}}
+  </div>
+  <div>
+    <label><b>Goods Status: </b></label> {{goods.status}}
+  </div>
+  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Goods List</button><br>

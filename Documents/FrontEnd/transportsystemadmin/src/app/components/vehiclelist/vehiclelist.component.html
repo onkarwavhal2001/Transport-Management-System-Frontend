@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Good's List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Vehicle-Id</th>
+            <th>Vehicle-Type</th>
+            <th>Vehicle-Capacity</th>
+            <th>Vehicle-Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of vehicles |  async" >
+            <td>{{v.vehicleId}}</td>
+            <td>{{v.vehicleType}}</td>
+            <td>{{v.capacity}}</td>
+            <td>{{v.availabilityStatus}}</td>
+            
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>

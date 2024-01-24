@@ -1,0 +1,39 @@
+<br><br>
+<div class="main">
+<div class="input-group container">
+    <input #merchId type="text" class="form-control rounded" placeholder="Enter id" required name="id" aria-label="Search" aria-describedby="search-addon" />
+    <button type="button" (click)="merchantDetails(merchId.value)" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
+    <button (click)="addSeed" class="btn btn-info" style="margin-left: 10px">Add Seed</button>
+    <button (click)="addMerchant()" class="btn btn-info" style="margin-left: 10px">Add Merchant</button>
+
+</div>
+</div>
+<div *ngIf="visit">
+    <div>
+        <label><b>Merchant Id: </b></label> {{merchant.merchantId}}
+      </div>
+      <div>
+        <label><b>Merchant Name: </b></label> {{merchant.merchantName}}
+      </div>
+      <div>
+        <label><b>Merchant Password: </b></label> {{merchant.merchantPassword}}
+      </div>
+      <div>
+        <label><b>Merchant MobNo: </b></label> {{merchant.mMobNo}}
+      </div>
+      <div>
+        <label><b>Merchant EmailId: </b></label> {{merchant.emailId}}
+      </div>
+      <div>
+        <label><b>Merchant Address: </b></label> {{merchant.merchantAddress}}
+      </div>
+    
+    <div *ngFor="let s of merchant.seeds">
+        <p>{{s.seedssId}}</p>
+    <p>{{s.sdescription}}</p>
+    <p>{{s.squantity}}</p>
+    <p>{{s.spickupLocation}}</p>
+    <p>{{s.sdeliveryLocation}}</p>
+    <p>{{s.sstatus}}</p>
+    </div>
+</div>

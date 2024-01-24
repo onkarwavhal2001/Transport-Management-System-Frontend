@@ -1,0 +1,36 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Seed's List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Seeds-Id</th>
+            <th>Seeds-Description</th>
+            <th>Seeds-Quantity</th>
+            <th>Seeds-Pickup</th>
+            <th>Seeds-Delivery</th>
+            <th>Seeds-Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of seeds |  async" >
+            <td>{{s.seedssId}}</td>
+            <td>{{s.sdescription}}</td>
+            <td>{{s.squantity}}</td>
+            <td>{{s. spickupLocation}}</td>
+            <td>{{s.sdeliveryLocation}}</td>
+            <td>{{s.sstatus}}</td>
+            
+            <td><button (click)="deleteSeed(s.seedssId)"  class="btn btn-danger">Delete</button>
+              <button (click)="seedDetails(s.seedssId)" class="btn btn-info" style="margin-left: 10px">Details</button>
+              <button (click)="updateDetails(s.seedssId)" class="btn btn-info" style="margin-left: 10px">Edit</button>
+            </td>
+
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>

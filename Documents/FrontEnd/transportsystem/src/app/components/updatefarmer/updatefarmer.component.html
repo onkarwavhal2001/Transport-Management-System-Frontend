@@ -1,0 +1,52 @@
+<h3>updateDetails Farmer</h3>
+<div >
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Farmer Id</label>
+      <input type="text" class="form-control" id="farmerId" 
+      required [(ngModel)]="farmer.farmerId" name="farmerId">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Farmer Name</label>
+      <input type="text" class="form-control" id="name" 
+      
+      required [(ngModel)]="farmer.farmerName" name="name">
+    </div>
+
+    
+    <div class="form-group">
+        <label for="pass">Farmer Password</label>
+        <input type="password" class="form-control" id="pass" 
+        
+        required [(ngModel)]="farmer.farmerPassword" name="pass">
+      </div>
+
+      
+    <div class="form-group">
+        <label for="mob">Farmer MobileNo</label>
+        <input type="text" class="form-control" id="mob" 
+        
+        required [(ngModel)]="farmer.fMobNo" name="mob">
+      </div>
+
+      
+    <div class="form-group">
+        <label for="name">Farmer EmailId</label>
+        <input type="email" class="form-control" id="femailId" 
+        
+        required [(ngModel)]="farmer.femailId" name="femailId">
+      </div>
+
+      
+    <div class="form-group">
+        <label for="name">Farmer Address</label>
+        <input type="text" class="form-control" id="farmerAddress" 
+        
+        required [(ngModel)]="farmer.farmerAddress" name="farmerAddress">
+      </div>
+   
+
+    <button type="submit" class="btn btn-success">Edit</button>
+  </form>
+</div>

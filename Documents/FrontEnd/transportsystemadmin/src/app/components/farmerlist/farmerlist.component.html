@@ -1,0 +1,35 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Farmer List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Farmer-Id</th>
+            <th>Farmer-Name</th>
+            <th>Farmer-Password</th>
+            <th>Farmer-MobileNo</th>
+            <th>Farmer-EmailId</th>
+            <th>Farmer-Address</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let f of farmers |  async" >
+            <td>{{f.farmerId}}</td>
+            <td>{{f.farmerName}}</td>
+            <td>{{f.farmerPassword}}</td>
+            <td>{{f.fMobNo}}</td>
+            <td>{{f.femailId}}</td>
+            <td>{{f.farmerAddress}}</td>
+            <td><button (click)="deleteFarmer(f.farmerId)"  class="btn btn-danger">Delete</button>
+              <button (click)="farmerDetails(f.farmerId)" class="btn btn-info" style="margin-left: 10px">Details</button>
+              <button (click)="updateDetails(f.farmerId)" class="btn btn-info" style="margin-left: 10px">Edit</button>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>

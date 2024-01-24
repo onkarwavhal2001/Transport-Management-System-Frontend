@@ -1,0 +1,27 @@
+<h2>Seeds details</h2>
+<hr>
+<div *ngIf="seeds">
+  <div>
+    <label><b>Seeds Id: </b></label> {{seeds.seedssId}}
+  </div>
+  <div>
+    <label><b>Seeds Description: </b></label> {{seeds.sdescription}}
+  </div>
+  <div>
+    <label><b>Seeds Quantity: </b></label> {{seeds.squantity}}
+  </div>
+  <div>
+    <label><b>Seeds PickupLocation: </b></label> {{seeds.spickupLocation}}
+  </div>
+  <div>
+    <label><b>Seeds DeliveryLocation: </b></label> {{seeds.sdeliveryLocation}}
+  </div>
+  <div>
+    <label><b>Seeds Status: </b></label> {{seeds.sstatus}}
+  </div>
+  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Seeds List</button><br>

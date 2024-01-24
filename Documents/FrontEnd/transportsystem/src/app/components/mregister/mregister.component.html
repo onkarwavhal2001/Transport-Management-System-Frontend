@@ -1,0 +1,136 @@
+<!-- <br>
+<div [hidden]="submitted" style="width: 400px;" class="container">
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="id">Merchant Id</label>
+            <input type="text" class="form-control" id="id" required [(ngModel)]="merchant.merchantId" name=" id">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Merchant Name</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="merchant.merchantName" name="name">
+        </div>
+
+        <div class="form-group">
+            <label for="pass">Merchant Password</label>
+            <input type="password" class="form-control" id="pass" required [(ngModel)]="merchant.merchantPassword" name="pass">
+        </div>
+
+        <div class="form-group">
+            <label for="mobno">Merchant Mobile No</label>
+            <input type="text" class="form-control" id="mobno" required [(ngModel)]="merchant.mMobNo" name="mobno">
+        </div>
+
+        <div class="form-group">
+            <label for="emailid">Merchant Email</label>
+            <input type="email" class="form-control" id="emailid" required [(ngModel)]="merchant.emailId" name="emailid">
+        </div>
+
+        <div class="form-group">
+            <label for="add">Merchant Address</label>
+            <input type="textarea" class="form-control" id="add" required [(ngModel)]="merchant.merchantAddress" name="add">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+    <h4>Merchant registered successfully!</h4>
+     <button class="btn btn-success" (click)="newEmployee()">Add</button> 
+</div>
+<br> -->
+
+<div class="container" >
+    <form #signUpform="ngForm" (ngSubmit)="submitForm()"  class="login">
+      <small [class.text-danger]="msg.status==500">{{msg.message}}</small>
+  
+      <h2 style="text-align: center;"><b>REGISTRATION FORM</b></h2>
+      <marquee>create your account it's free only take a minute</marquee>
+  
+      <div class="form-group">
+        <label for="merchantId"><b>Merchant-Id</b></label>
+        <input type="text" class="form-control" id="merchantId" name="merchantId" [(ngModel)]="merchant.merchantId"
+          #merchantId="ngModel" [class.is-invalid]="merchantId.invalid && merchantId.touched" required placeholder="Enter Your Merchant Name">
+        <small class="text-danger" [class.d-none]="merchantId.valid || merchantId.untouched" >Merchant Id is required
+          field</small>
+      </div>
+  
+      <div class="form-group">
+        <label for="merchantName"><b>Merchant-Name</b></label>
+        <input type="text" class="form-control" id="merchantName" name="merchantName" [(ngModel)]="merchant.merchantName"
+          #merchantName="ngModel" [class.is-invalid]="merchantName.invalid && merchantName.touched" required placeholder="Enter Your User Name">
+        <small class="text-danger" [class.d-none]="merchantName.valid || merchantName.untouched" >Merchant name is required
+          field</small>
+      </div>
+  
+      
+      <div class="form-group">
+        <label for="emailId"><b>Email</b></label>
+        <input type="email" class="form-control" id="emailId" name="femailId" placeholder="Enter Your Email"
+          [(ngModel)]="merchant.emailId" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" #emailId="ngModel"
+          [class.is-invalid]="emailId.invalid && emailId.touched" />
+        <!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email id is required field</small>   -->
+        <div *ngIf="emailId.errors && (emailId.invalid && emailId.touched)">
+          <small class="text-danger" *ngIf="emailId.errors['required']">Email id is required field</small>
+          <small class="text-danger" *ngIf="emailId.errors['pattern']">Enter valid Email id</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mMobNo"><b>Merchant-MobNo</b></label>
+        <input type="text" class="form-control" id="mMobNo" name="mMobNo" [(ngModel)]="merchant.mMobNo"
+          #mMobNo="ngModel" [class.is-invalid]="mMobNo.invalid && mMobNo.touched" required placeholder="Enter Your User Name">
+        <small class="text-danger" [class.d-none]="mMobNo.valid || mMobNo.untouched" >Merchant MobNo is required
+          field</small>
+      </div>
+
+      <div class="form-group">
+        <label for="merchantAddress"><b>Merchant Address</b></label>
+        <input type="text" class="form-control" id="merchantAddress" name="merchantAddress" placeholder="Enter Your Password"
+          [(ngModel)]="merchant.merchantAddress" required #merchantAddress="ngModel"
+          [class.is-invalid]="merchantAddress.invalid && merchantAddress.touched" />
+        <small class="text-danger" [class.d-none]="merchantAddress.valid || merchantAddress.untouched">Address is required
+          field</small>
+      
+      </div>
+
+      <div class="form-group">
+        <label for="merchantPassword"><b>Merchant Password</b></label>
+        <input type="password" class="form-control" id="merchantPassword" name="merchantPassword" placeholder="Enter Your Password"
+          [(ngModel)]="merchant.merchantPassword" required #merchantPassword="ngModel"
+          [class.is-invalid]="merchantPassword.invalid && merchantPassword.touched" />
+        <small class="text-danger" [class.d-none]="merchantPassword.valid || merchantPassword.untouched">Password is required
+          field</small>
+      
+      </div>
+  
+      <div class="form-group">
+        <label for="cpassword"><b>Confirm Password</b></label>
+        <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Enter Confirm Password"
+          (ngModel)="merchant.merchantPassword" required #cpassword='ngModel'
+          [class.is-invalid]="cpassword.invalid && cpassword.touched" />
+        <small class="text-danger" [class.d-none]="(cpassword.value==merchantPassword.value) || cpassword.untouched">
+          Password and confirm password must be same</small>
+      </div>
+  
+     
+  
+  <br><br>
+     
+  
+      <button [disabled]="signUpform.form.invalid" type="submit" class="btn btn-info" style="margin-left: 40%; ">SIGN UP</button>
+      <br>
+     
+          <div style="color: white;  font-size: 20px; margin-left: 25%; ">
+            <br><br>
+              Existing User? <a [routerLink]="['/flogin']">LogIn Here</a>
+          </div>
+  
+    </form>
+   
+  
+  
+  </div>
+  <br><br>

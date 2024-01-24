@@ -1,0 +1,31 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SeedsserviceService {
+  baseUrl='http://localhost:8082';
+
+  constructor(private http:HttpClient) { }
+
+  createSeed(seeds: Object): Observable<Object> {
+    console.log(seeds);
+    return this.http.post(`${this.baseUrl}/addseeds`, seeds); 
+  }
+  getAllSeeds():any
+  {
+    return this.http.get(`${this.baseUrl}/getAllSeeds`);
+  }
+
+  deleteSeed(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/deleteSeed/${id}`, { responseType: 'text' });
+  }
+  getOneSeed(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/getSeed/${id}`);
+  }
+  updateSeed(seeds:object){
+    return this.http.put(`${this.baseUrl}/updateSeed`,seeds);
+  }
+}

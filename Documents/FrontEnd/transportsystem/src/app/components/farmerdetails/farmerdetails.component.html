@@ -1,0 +1,27 @@
+<h2>Farmer details</h2>
+<hr>
+<div *ngIf="farmer">
+  <div>
+    <label><b>Farmer Id: </b></label> {{farmer.farmerId}}
+  </div>
+  <div>
+    <label><b>Farmer Name: </b></label> {{farmer.farmerName}}
+  </div>
+  <div>
+    <label><b>Farmer Password: </b></label> {{farmer.farmerPassword}}
+  </div>
+  <div>
+    <label><b>Farmer MobNo: </b></label> {{farmer.fMobNo}}
+  </div>
+  <div>
+    <label><b>Farmer EmailId: </b></label> {{farmer.femailId}}
+  </div>
+  <div>
+    <label><b>Farmer Address: </b></label> {{farmer.farmerAddress}}
+  </div>
+  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Farmer List</button><br>
